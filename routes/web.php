@@ -11,6 +11,32 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::group(['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]],
+	function(){
+
+	Route::prefix('users')->name('users.')->middleware(['auth'])->group(function(){
+	
+		Route::get('/index','Dentalcliniccontroller@index')->name('index');
+
+		//doctors route
+		Route::resource('doctors','Doctorcontroller')->except(['show']);
+		//employees route
+		Route::resource('employees','Employeecontroller')->except(['show']);
+
 });
+
+
+});
+
+
+Route::get('/', function () {
+    return redirect()->route('users.index');
+});
+
+
+Auth::routes(['register'=>false]);
+
+Route::get('/home', 'HomeController@index')->name('home');
