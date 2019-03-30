@@ -37,6 +37,7 @@ class Doctorcontroller extends Controller
 
         $user = User::create($request_data);
 
+        $user->attachRole('Doctor');
 
         session()->flash('success',__('site.added_successfully'));
         return redirect()->route('users.doctors.index');
@@ -55,11 +56,8 @@ class Doctorcontroller extends Controller
         //
     }//end of update function
 
-    public function destroy($user)
+    public function destroy(User $user)
     {
-        
-        User::find($user)->delete();
-        session()->flash('success',__('site.deleted_successfully'));
-        return redirect()->route('users.doctors.index');
-    }
+        //
+    }//end of destroy function
 }

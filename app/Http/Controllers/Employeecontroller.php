@@ -36,6 +36,7 @@ class Employeecontroller extends Controller
 
         $user = User::create($request_data);
 
+        $user->attachRole('Employee');
         session()->flash('success',__('site.added_successfully'));
         return redirect()->route('users.employees.index');
     }//end of  store function

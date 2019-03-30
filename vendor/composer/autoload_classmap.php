@@ -15,6 +15,8 @@ return array(
     'App\\Http\\Controllers\\Auth\\VerificationController' => $baseDir . '/app/Http/Controllers/Auth/VerificationController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\Dentalcliniccontroller' => $baseDir . '/app/Http/Controllers/Dentalcliniccontroller.php',
+    'App\\Http\\Controllers\\Doctorcontroller' => $baseDir . '/app/Http/Controllers/Doctorcontroller.php',
+    'App\\Http\\Controllers\\Employeecontroller' => $baseDir . '/app/Http/Controllers/Employeecontroller.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',

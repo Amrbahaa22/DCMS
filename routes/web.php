@@ -26,6 +26,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'lo
 		//employees route
 		Route::resource('employees','Employeecontroller')->except(['show']);
 
+		Route::resource('patients','Patientcontroller')->except(['show']);
+
 });
 
 
