@@ -57,6 +57,9 @@ class Doctorcontroller extends Controller
 
     public function destroy(User $user)
     {
-        //
-    }//end of destroy function
+        
+        $user->delete();
+        session()->flash('success',__('site.deleted_successfully'));
+        return redirect()->route('users.doctors.index');
+    }
 }
