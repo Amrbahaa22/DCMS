@@ -63,7 +63,7 @@
                       				<td>{{$user->email}}</td>
                       			<td>
 									  <a href="#" class="btn btn-info btn-sm"><i class="fa fa-edit"></i>@lang('site.edit')</a>
-									  <form method="POST" action="doctors/{{$user}}" style="display:inline">
+									  <form method="POST" action="doctors/{{$user-$id}}" style="display:inline">
 										@method('DELETE')
 										@csrf
 										<button type="submit" class="btn btn-danger delete btn-sm"><i class="fa fa-trash"></i>@lang('site.delete')</button>
