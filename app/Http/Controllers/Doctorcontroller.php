@@ -38,7 +38,6 @@ class Doctorcontroller extends Controller
         $user = User::create($request_data);
 
 
-
         session()->flash('success',__('site.added_successfully'));
         return redirect()->route('users.doctors.index');
 

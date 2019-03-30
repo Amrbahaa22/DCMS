@@ -3,10 +3,10 @@
 return [
     'role_structure' => [
         'Owner' => [
-            'users' => 'c,r,u,d',
+            'users' => 'c,r,u,d,emp,doc',
 
         ],
-        
+
     ],
 
 
