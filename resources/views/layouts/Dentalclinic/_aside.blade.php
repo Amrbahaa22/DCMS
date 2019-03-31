@@ -19,7 +19,7 @@
             <li><a href="{{route('users.doctors.index')}}"><i class="fa fa-th"></i><span>@lang('site.doctors')</span></a></li>
             <li><a href="{{route('users.employees.index')}}"><i class="fa fa-th"></i><span>@lang('site.employees')</span></a></li>
             @endif
-            <li><a href="{{route('users.patients.index')}}"><i class="fa fa-th"></i><span>@lang('site.patients')</span></a></li>
+            
 
          
                 
