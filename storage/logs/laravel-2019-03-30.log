@@ -166,6 +166,7 @@ ewproj\\server.php(21): require_once('C:\\\\xamp\\\\htdocs\\\\...')
 #81 {main}
 "} 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [2019-03-30 13:26:43] local.ERROR: Route [users.patients.index] not defined. (View: C:\xampp\htdocs\laravel\newproj\resources\views\layouts\Dentalclinic\_aside.blade.php) (View: C:\xampp\htdocs\laravel\newproj\resources\views\layouts\Dentalclinic\_aside.blade.php) (View: C:\xampp\htdocs\laravel\newproj\resources\views\layouts\Dentalclinic\_aside.blade.php) {"userId":2,"exception":"[object] (ErrorException(code: 0): Route [users.patients.index] not defined. (View: C:\\xampp\\htdocs\\laravel\
 ewproj\esources\\views\\layouts\\Dentalclinic\\_aside.blade.php) (View: C:\\xampp\\htdocs\\laravel\
 ewproj\esources\\views\\layouts\\Dentalclinic\\_aside.blade.php) (View: C:\\xampp\\htdocs\\laravel\
@@ -1079,6 +1080,8 @@ ewproj\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Obje
 ewproj\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #68 {main}
 =======
+=======
+>>>>>>> Stashed changes
 [2019-03-30 14:07:02] local.ERROR: SQLSTATE[HY000] [1049] Unknown database 'dentalclinic' (SQL: select * from `users` where `email` = marwan@gmail.com limit 1) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 1049): SQLSTATE[HY000] [1049] Unknown database 'dentalclinic' (SQL: select * from `users` where `email` = marwan@gmail.com limit 1) at C:\\Users\\amr-bahaa\\sw2\
 ewproj\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:664, PDOException(code: 1049): SQLSTATE[HY000] [1049] Unknown database 'dentalclinic' at C:\\Users\\amr-bahaa\\sw2\
 ewproj\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php:70)
@@ -5442,5 +5445,8 @@ ewproj\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Obje
 #63 C:\\Users\\amr-bahaa\\sw2\
 ewproj\\server.php(21): require_once('C:\\\\Users\\\\amr-ba...')
 #64 {main}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 "} 
