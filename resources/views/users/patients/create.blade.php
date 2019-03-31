@@ -25,10 +25,10 @@
                			
                			@include('partials._errors')
 
-	               		<form action="" method="">
-<!-- 	               			{{csrf_field()}}
+	               		<form action="{{route('users.patients.store')}}" method="post">
+	               			{{csrf_field()}}
 	               			{{method_field('post')}}
- -->
+
 	               			
 
 
@@ -54,7 +54,7 @@
 
 	               			<div class="form-group">
 	               				<label>@lang('site.cellphone')</label>
-	               				<input type="text" name="cellphone" class="form-control" value="{{old('cell phone')}}">
+	               				<input type="text" name="cellphone" class="form-control" value="{{old('cellphone')}}">
 	               			</div>
 	               		
 	               			<div class="form-group">

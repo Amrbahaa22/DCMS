@@ -60,7 +60,7 @@
                       				<td><?php echo e($user->email); ?></td>
                       			<td>
 									  <a href="#" class="btn btn-info btn-sm"><i class="fa fa-edit"></i><?php echo app('translator')->getFromJson('site.edit'); ?></a>
-									  <form method="POST" action="doctors/<?php echo e($user); ?>" style="display:inline">
+									  <form method="POST" action="doctors/<?php echo e($user->id); ?>" style="display:inline">
 										<?php echo method_field('DELETE'); ?>
 										<?php echo csrf_field(); ?>
 										<button type="submit" class="btn btn-danger delete btn-sm"><i class="fa fa-trash"></i><?php echo app('translator')->getFromJson('site.delete'); ?></button>

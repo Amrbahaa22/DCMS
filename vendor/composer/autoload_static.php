@@ -383,11 +383,8 @@ class ComposerStaticInit645131e9aae301562fb2b7797f7f4144
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\Dentalcliniccontroller' => __DIR__ . '/../..' . '/app/Http/Controllers/Dentalcliniccontroller.php',
-<<<<<<< Updated upstream
         'App\\Http\\Controllers\\Doctorcontroller' => __DIR__ . '/../..' . '/app/Http/Controllers/Doctorcontroller.php',
         'App\\Http\\Controllers\\Employeecontroller' => __DIR__ . '/../..' . '/app/Http/Controllers/Employeecontroller.php',
-=======
->>>>>>> Stashed changes
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',

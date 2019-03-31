@@ -33,9 +33,9 @@
 	               				<label><?php echo app('translator')->getFromJson('site.name'); ?></label>
 	               				<input type="text" name="name" class="form-control" value="<?php echo e(old('name')); ?>">
 	               			</div>
-	               			<div class="form-group">
+	               				<div class="form-group">
 	               				<label><?php echo app('translator')->getFromJson('site.age'); ?></label>
-	               				<input type="text" name="age" class="form-control" value="<?php echo e(old('age')); ?>">
+	               				<input type="number" name="age" value="<?php echo e(old('age')); ?>" class="form-control" min="1" max="120" step="1"/>
 	               			</div>
 	               			<div class="form-group">
 	               				<label><?php echo app('translator')->getFromJson('site.phone'); ?></label>

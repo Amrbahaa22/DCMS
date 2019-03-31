@@ -13,40 +13,17 @@
         </div>
 
         <ul class="sidebar-menu" data-widget="tree">
+            
             <li><a href="<?php echo e(route('users.index')); ?>"><i class="fa fa-th"></i><span><?php echo app('translator')->getFromJson('site.main'); ?></span></a></li>
+            <?php if(auth()->user()->hasPermission('own_users')): ?>
             <li><a href="<?php echo e(route('users.doctors.index')); ?>"><i class="fa fa-th"></i><span><?php echo app('translator')->getFromJson('site.doctors'); ?></span></a></li>
             <li><a href="<?php echo e(route('users.employees.index')); ?>"><i class="fa fa-th"></i><span><?php echo app('translator')->getFromJson('site.employees'); ?></span></a></li>
+            <?php endif; ?>
+            <li><a href="<?php echo e(route('users.patients.index')); ?>"><i class="fa fa-th"></i><span><?php echo app('translator')->getFromJson('site.patients'); ?></span></a></li>
 
          
                 
-      <!--       
-            
-            
-            
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-             -->
+     
         </ul>
 
     </section>

@@ -20,8 +20,25 @@ class Patientcontroller extends Controller
 
     public function store(Request $request)
     {
-        //
-    }
+        $request->validate([
+            'name' => 'required',
+            'age'  => 'required',
+            'address'  => 'required',
+            'cellphone'=> 'required',
+            'telephone' => 'required',
+            'doctorName' => 'required',
+
+        ]);
+
+         Patient::create($request);
+
+        
+
+        session()->flash('success',__('site.added_successfully'));
+        return redirect()->route('users.patients.index');
+
+
+    }//end of store function
 
     public function edit(Patient $patient)
     {
