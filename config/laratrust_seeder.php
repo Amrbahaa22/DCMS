@@ -3,7 +3,15 @@
 return [
     'role_structure' => [
         'Owner' => [
-            'users' => 'c,r,u,d,emp,doc',
+            'users' => 'o',
+
+        ],
+        'Doctor' => [
+            'users' => 'd',
+
+        ],
+        'Employee' => [
+            'users' => 'e',
 
         ],
 
@@ -11,9 +19,8 @@ return [
 
 
     'permissions_map' => [
-        'c' => 'create',
-        'r' => 'read',
-        'u' => 'update',
-        'd' => 'delete'
+        'e' => 'emp',
+        'd' => 'doc',
+        'o' => 'own',
     ],
 ];

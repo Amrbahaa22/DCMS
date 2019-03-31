@@ -10,6 +10,14 @@
     <link rel="stylesheet" href="{{ asset('dashboard/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('dashboard/css/ionicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('dashboard/css/skin-blue.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
+    
+
+    <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
 
     @if (app()->getLocale() == 'ar')
         <link rel="stylesheet" href="{{ asset('dashboard/css/font-awesome-rtl.min.css') }}">
@@ -17,7 +25,9 @@
         <link href="https://fonts.googleapis.com/css?family=Cairo:400,700" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('dashboard/css/bootstrap-rtl.min.css') }}">
         <link rel="stylesheet" href="{{ asset('dashboard/css/rtl.css') }}">
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
+        <link rel="stylesheet" href="{{ asset('dashboard/css/casper.css') }}">
         <style>
             body, h1, h2, h3, h4, h5, h6 {
                 font-family: 'Cairo', sans-serif !important;
@@ -27,6 +37,9 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
         <link rel="stylesheet" href="{{ asset('dashboard/css/font-awesome.min.css') }}">
         <link rel="stylesheet" href="{{ asset('dashboard/css/AdminLTE.min.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
+        <link rel="stylesheet" href="{{ asset('dashboard/css/casper.css') }}">
     @endif
 
     <style>
@@ -37,6 +50,8 @@
     </style>
     {{--<!-- jQuery 3 -->--}}
     <script src="{{ asset('dashboard/js/jquery.min.js') }}"></script>
+    {{--<!-- DateTimePicker -->--}}
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
 
     {{--noty--}}
     <link rel="stylesheet" href="{{ asset('dashboard/plugins/noty/noty.css') }}">
@@ -48,6 +63,17 @@
     {{--html in  ie--}}
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <script >
+        $ (function(){
+            $('.datepicker').datepicker();
+        });
+ 
+    </script>
 
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -158,7 +184,7 @@
 
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <img src="{{ asset('dashboard/img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
-                            <span class="hidden-xs">Manaa</span>
+                            <span class="hidden-xs">{{auth()->user()->name}}</span>
                         </a>
                         <ul class="dropdown-menu">
 

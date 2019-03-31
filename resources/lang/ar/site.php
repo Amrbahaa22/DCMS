@@ -27,4 +27,7 @@ return [
 	'added_successfully'=>'تمت الاضافة بنجاح',
 	'employees'=>'الموظفين',
 	'deleted_successfully'=>'تم الحذف بنجاح',
+	'patients'=> 'المرضي',
+	'logout'=> 'تسجل الخروج',
+	'doctorName'=> 'اسم الطبيب',
 ];
