@@ -18,10 +18,11 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->integer('age');
             $table->string('email')->unique();
+            $table->string('image')->default('default.png');
             $table->timestamp('email_verified_at')->nullable();
             $table->float('Incomerate');
             $table->float('HourSalary');
-            $table->integer('phone');
+            $table->string('phone');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

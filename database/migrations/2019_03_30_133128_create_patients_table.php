@@ -19,11 +19,15 @@ class CreatePatientsTable extends Migration
             $table->integer('age');
             $table->string('address');
             $table->string('cellphone');
-            $table->string('telephone');
+            $table->string('telephone')->nullable();
             $table->string('job');
+            $table->boolean('attendance');
             $table->string('doctorName');
-            $table->dateTime('SubmitDate');
-            $table->dateTime('Next Appointment');
+            $table->date('SubmitDate');
+            $table->date('NextAppointment');
+            $table->string('MedicalHistory', 500)->nullable();
+            $table->string('DentalHistory', 500)->nullable();
+            $table->string('ChiefComplain', 500)->nullable();
 
             $table->timestamps();
         });

@@ -14,10 +14,17 @@
     
 
     <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet"/>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+    <!-- datebicker -->
+    <link rel="stylesheet" href="{{ asset('bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
 
+    <style>
+        .complete{
+            text-decoration: line-through;
+        }
+    </style>
 
     @if (app()->getLocale() == 'ar')
         <link rel="stylesheet" href="{{ asset('dashboard/css/font-awesome-rtl.min.css') }}">
@@ -28,6 +35,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
         <link rel="stylesheet" href="{{ asset('dashboard/css/casper.css') }}">
+        
         <style>
             body, h1, h2, h3, h4, h5, h6 {
                 font-family: 'Cairo', sans-serif !important;
@@ -40,6 +48,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
         <link rel="stylesheet" href="{{ asset('dashboard/css/casper.css') }}">
+        
     @endif
 
     <style>
@@ -83,7 +92,7 @@
     <header class="main-header">
 
         {{--<!-- Logo -->--}}
-        <a href="{{route('users.index')}}" class="logo">
+        <a href="{{route('users.main.index')}}" class="logo">
             {{--<!-- mini logo for sidebar mini 50x50 pixels -->--}}
             <span class="logo-mini"><b>D</b>CL</span>
             <span class="logo-lg"><b>Dental</b>Clinic</span>
@@ -115,7 +124,7 @@
                                     <li><!-- start message -->
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="{{ asset('dashboard/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+                                                <img src="{{auth()->user()->image_path}}" class="img-circle" alt="User Image">
                                             </div>
                                             <h4>
                                                 Support Team
@@ -183,17 +192,17 @@
                     <li class="dropdown user user-menu">
 
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="{{ asset('dashboard/img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
+                            <img src="{{auth()->user()->image_path}}" class="user-image" alt="User Image">
                             <span class="hidden-xs">{{auth()->user()->name}}</span>
                         </a>
                         <ul class="dropdown-menu">
 
                             {{--<!-- User image -->--}}
                             <li class="user-header">
-                                <img src="{{ asset('dashboard/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+                                <img src="{{auth()->user()->image_path}}" class="img-circle" alt="User Image">
 
                                 <p>
-                                    Admin
+                                    {{auth()->user()->name}}
                                     <small>Member since 2 days</small>
                                 </p>
                             </li>
@@ -238,6 +247,8 @@
 {{--<!-- Bootstrap 3.3.7 -->--}}
 <script src="{{ asset('dashboard/js/bootstrap.min.js') }}"></script>
 
+<script src="{{ asset('dashboard/js/jquery.min.js') }}"></script>
+
 {{--icheck--}}
 <script src="{{ asset('dashboard/plugins/icheck/icheck.min.js') }}"></script>
 
@@ -247,7 +258,14 @@
 {{--<!-- AdminLTE App -->--}}
 <script src="{{ asset('dashboard/js/adminlte.min.js') }}"></script>
 
+<!-- bootstrap datepicker -->
+<script src="{{ asset('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
+ 
+<script type="text/javascript">
+ $.fn.datepicker.defaults.format = "yyyy-mm-dd";
+$('.datepicker').datepicker();
 
+</script>
 <script>
     $(document).ready(function () {
         $('.sidebar-menu').tree();
@@ -284,24 +302,32 @@
 
         });//end of delete
 
-        // image preview
-        $(".image").change(function () {
 
-            if (this.files && this.files[0]) {
-                var reader = new FileReader();
 
-                reader.onload = function (e) {
-                    $('.image-preview').attr('src', e.target.result);
-                }
 
-                reader.readAsDataURL(this.files[0]);
-            }
-
-        });
 
     })
 
 
+</script>
+
+<script type="text/javascript">
+    $.ajax({
+url: "http://127.0.0.1:8000/ar/users/session",
+
+
+
+success: function(data) {
+    console.log(data);
+    $('#session-table').empty();
+
+    for (var i = 0 ; i <= data.length; i++) {
+        $('#session-table').append('<tr><td></td><td>' + data[i].TotalFee+ '</td><td><input type="number" name="age" ' + 'value=' + "{{old('TotalFee')}}" + ' class="form-control" min="1" max="120" step="1"></td><td><button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> '+ "@lang('site.add')" + '</button></td>');
+    }
+;
+},
+type: 'GET'
+});
 </script>
 </body>
 </html>

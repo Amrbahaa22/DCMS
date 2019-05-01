@@ -19,9 +19,9 @@ class UsersTableSeeder extends Seeder
         	'HourSalary'=> '0.0',
         	'phone'     =>'01111946764',
         	'password'  => bcrypt('123456'),
+            'image'     => 'admin.jpg',
 
         ]);
-
         $user->attachRole('Owner');
     }//end of run
 }//end of seeder

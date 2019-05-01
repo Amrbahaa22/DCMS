@@ -3,12 +3,13 @@
 
 @section('content')
 
+	
 	<div class="content-wrapper">
 		<section class="content-header">
 
 			<h1>@lang('site.patients')</h1>
 			<ol class="breadcrumb">
-				<li><a href="{{ route('users.index') }}"><i class="fa fa-dashboard"></i> @lang('site.main')</a></li>
+				<li><a href="{{ route('users.main.index') }}"><i class="fa fa-dashboard"></i> @lang('site.main')</a></li>
                 <li><a href="{{ route('users.patients.index') }}"> @lang('site.patients')</a></li>
                 <li class="active">@lang('site.add')</li>
 			</ol>		
@@ -28,51 +29,63 @@
 	               		<form action="{{route('users.patients.store')}}" method="post">
 	               			{{csrf_field()}}
 	               			{{method_field('post')}}
-
-	               			
-
-
-
-
-
+	               			<!-- patient name -->
 	               			<div class="form-group">
 	               				<label>@lang('site.name')</label>
-	               				
 	               				<input type="text" name="name" class="form-control" value="{{old('name')}}">
 	               			</div>
+	               			<!-- patient age -->
 	               			<div class="form-group">
 	               				<label>@lang('site.age')</label>
-	               				<input type="number" name="age" value="{{old('age')}}" class="form-control" min="1" max="120" step="1"/>
+	               				<input type="number" name="age" class="form-control" value="{{old('age')}}" min="1" max="120" step="1">
 	               			</div>
-
+	               			<!-- patient address -->
 	               			<div class="form-group">
 	               				<label>@lang('site.address')</label>
 	               				<input type="text" name="address" class="form-control" value="{{old('address')}}">
 	               			</div>
-
-
-
+	               			<!-- patient cellphone -->
 	               			<div class="form-group">
 	               				<label>@lang('site.cellphone')</label>
 	               				<input type="text" name="cellphone" class="form-control" value="{{old('cellphone')}}">
 	               			</div>
-	               		
+	               			<!-- patient telephone -->
 	               			<div class="form-group">
 	               				<label>@lang('site.telephone')</label>
 	               				<input type="text" name="telephone" class="form-control" value="{{old('telephone')}}">
 	               			</div>
-	               		
-	               		 	<div class="form-group">
-	               				<label>@lang('site.doctorName')</label>
-	               				<input type="text" name="doctorName" class="form-control" value="{{old('doctorName')}}">
+	               			<!-- patient job -->
+	               			<div class="form-group">
+	               				<label>@lang('site.job')</label>
+	               				<input type="text" name="job" class="form-control" value="{{old('job')}}">
 	               			</div>
-	               		
-							
+	               			<!-- patient doctor -->
+							<div class="form-group">
+			                  <label>@lang('site.doctorname')</label>
+			                  <select name="doctorName" class="form-control">
+			                  	 <option disabled selected value>@lang('site.choose')</option>
+			                    @foreach($doctors as $doc)
+			                     <option>{{$doc->name}}</option>
+			                    @endforeach
+			                  </select>
+			                </div>
+			                <div class="form-group">
+			                	  <label>@lang('site.nextdate')</label>
+					            <div class="input-group date col-xs-4" data-provide="datepicker">
+		   							<div class="input-group-addon">
+		  						      <span class="glyphicon glyphicon-th"></span>
+		 						    </div>
+		   							 <input type="text" name="NextAppointment" class="form-control datepicker" value="{{old('NextAppointment')}}">
+		   							
+								</div>			                	
+			                </div>
+
+
+
+	             
 	               			<div class="form-group">
 	               				<button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i>@lang('site.add')</button>
 	               			</div>
-	
-
 	               		</form>	
 
                		</div><!-- end of box body-->
@@ -81,5 +94,8 @@
 		</section> <!-- end of content -->
 		
 	</div>  <!-- end of content wrapper -->
+
+
+
 
 @endsection
